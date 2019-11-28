@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+import FoodItem from './components/FoodItems'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello createreact app</h1>
+      <FoodItem />
     </div>
   );
 }
