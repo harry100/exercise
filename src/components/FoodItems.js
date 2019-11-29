@@ -62,6 +62,7 @@ const FoodItem = () => {
                         itemsPerPage={itemsPerPage}
                         totalItems={foodItems.length}
                         paginate={paginate}
+                        activePage={currentPage}
                     />
                 ): ('')}
             </section>
