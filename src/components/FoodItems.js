@@ -6,12 +6,13 @@ import constants from '../utils/constants';
 
 //includes
 import FoodCard from './includes/FoodCard';
+import Pagination from './includes/Pagination';
 
 const items = [
     {
         image: '/images/giphy.gif',
         price: '',
-        name: ''
+        name: '',
     },
     {
         image: '/images/giphy.gif',
@@ -22,6 +23,8 @@ const items = [
 
 const FoodItem = () => {
     const [foodItems, setFoodItems] = useState(items);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage] = useState(2);
 
     useEffect(() => {
         axios.get(constants.getAllFoodItems)
@@ -29,7 +32,15 @@ const FoodItem = () => {
                 setFoodItems(result.data)
             })
             .catch(err => console.log(err))
-    }, [])
+    }, []);
+
+    //Get current items
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexofFirseItem = indexOfLastItem - itemsPerPage;
+    const currentItems = foodItems.slice(indexofFirseItem, indexOfLastItem);
+
+    //Change Page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return(
         <div className="container">
@@ -38,7 +49,7 @@ const FoodItem = () => {
             <section>
                 <div className="row">
                     {
-                        foodItems.map((item, i) => {
+                        currentItems.map((item, i) => {
                             return <FoodCard key={i} item={item} />
                         })
                     }
@@ -46,28 +57,12 @@ const FoodItem = () => {
             </section>
 
             <section>
-                {foodItems.length>2? (
-                    <div className="navigation">
-                        <nav aria-label="Page navigation example" className="pagination-nav">
-                            <ul className="pagination">
-                                <li className="page-item">
-                                <a className="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span className="sr-only">Previous</span>
-                                </a>
-                                </li>
-                                <li className="page-item"><a className="page-link" href="#">1</a></li>
-                                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                <li className="page-item">
-                                <a className="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span className="sr-only">Next</span>
-                                </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                {foodItems[0].id? (
+                    <Pagination
+                        itemsPerPage={itemsPerPage}
+                        totalItems={foodItems.length}
+                        paginate={paginate}
+                    />
                 ): ('')}
             </section>
 
