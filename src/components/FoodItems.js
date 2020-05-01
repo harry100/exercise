@@ -66,7 +66,7 @@ const FoodItem = () => {
                         paginate={paginate}
                         activePage={currentPage}
                     />
-                ): ('Data blocked Need to create a backend')}
+                ): ('Data blocked Need to create a backend api')}
             </section>
 
         </div>
