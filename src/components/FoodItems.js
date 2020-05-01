@@ -66,7 +66,7 @@ const FoodItem = () => {
                         paginate={paginate}
                         activePage={currentPage}
                     />
-                ): ('')}
+                ): ('Data blocked')}
             </section>
 
         </div>
