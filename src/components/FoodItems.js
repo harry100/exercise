@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Confetti from 'react-confetti';
 
 //constants
 import constants from '../utils/constants';
@@ -44,6 +45,7 @@ const FoodItem = () => {
 
     return(
         <div className="container">
+            <Confetti className="confetti"/>
             <h1 className="food-item-heading"> Checkout today's awesome items </h1>
 
             <section>
