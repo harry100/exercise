@@ -8,6 +8,7 @@ import constants from '../utils/constants';
 //includes
 import FoodCard from './includes/FoodCard';
 import Pagination from './includes/Pagination';
+import Form from './includes/Form';
 
 const items = [
     {
@@ -45,7 +46,7 @@ const FoodItem = () => {
 
     return(
         <div className="container">
-            <Confetti className="confetti"/>
+            {/*<Confetti className="confetti"/>*/}
             <h1 className="food-item-heading"> Checkout today's awesome items </h1>
 
             <section>
@@ -66,8 +67,10 @@ const FoodItem = () => {
                         paginate={paginate}
                         activePage={currentPage}
                     />
-                ): ('Data blocked Need to create a backend api')}
+                ): ('Data blocked most probably cors issue.')}
             </section>
+
+            <Form />
 
         </div>
     )
