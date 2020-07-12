@@ -42,7 +42,7 @@ const FoodItem = () => {
     useEffect(() => {
         setLoader(true)
         axios(
-          'https://hn.algolia.com/api/v1/search?query=reduxdfgsdfg',
+          'https://hn.algolia.com/api/v1/search?query=redux',
         )
             .then(result => {
                 setLoader(false)
@@ -62,8 +62,6 @@ const FoodItem = () => {
 
     //Change Page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-    console.log(data)
 
     return(
         <div className="container">
