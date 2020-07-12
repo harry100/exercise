@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { compose } from 'recompose';
 
 import withTodosNull from './hocs/withTodosNull';
@@ -12,12 +12,6 @@ const withConditionalRenderings = compose(
 );
 
 const TodoListWithConditionalRendering = withConditionalRenderings(TodoList);
-
-// const TodoListOne = withTodosNull(TodoList);
-// const TodoListTwo = withLoadingIndicator(TodoListOne);
-// const TodoListThree = withTodosEmpty(TodoListTwo);
-
-// const TodoListWithConditionalRendering = withLoadingIndicator(withTodosNull(withTodosEmpty(TodoList)));
 
 function App(props) {
 	return (

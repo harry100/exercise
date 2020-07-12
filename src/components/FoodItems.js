@@ -63,7 +63,7 @@ const FoodItem = () => {
     //Change Page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    console.log(data.hits)
+    console.log(data)
 
     return(
         <div className="container">
