@@ -1,14 +1,10 @@
 {
-  "name": "harry100-exercise",
+  "name": "pr-test",
   "scripts": {
   },
   "env": {
   },
-  "formation": {
-    "web": {
-      "quantity": 1
-    }
-  },
+  "formation": {},
   "addons": [
 
   ],
