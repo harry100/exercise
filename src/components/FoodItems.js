@@ -86,7 +86,7 @@ const FoodItem = () => {
                         paginate={paginate}
                         activePage={currentPage}
                     />
-                ): ('Data blocked Need to create a backend api')}
+                ): ('Data blocked most probably cors issue.')}
             </section>
 
             <TodoComponent todos={data.hits} isLoadingTodos={loader} />
